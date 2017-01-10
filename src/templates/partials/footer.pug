@@ -1,0 +1,90 @@
+//Footer
+footer.container-fluid
+	h2.logo-brand
+		+image('logo-bbb-cereza-limon.png', 'BON BON BUM Cereza Limón')
+
+
+	//Bloque para contador y mensajes del juego
+
+	case titulo
+		when 'Cereza'
+
+			div.container-message.hidden
+				p.message
+					a.start(href="#"): +image('clic-aqui.svg', 'Clic aquí')
+					span Cuando estés listo
+
+			div.container-message.container-counter
+				div.counter
+					div.counter-time
+						div.clock-icon
+							include ../../../publication/images/clock.svg
+
+						p.clock-text 99:99
+
+					div.counter-contador
+						h3.cantidad 3
+						p Encontrados
+
+		when 'Limon'
+
+			div.container-message.hidden
+				p.message
+					a.start(href="#"): +image('clic-aqui.svg', 'Clic aquí')
+					span Cuando estés listo
+
+			div.container-message.container-counter
+				div.counter
+					div.counter-time
+						div.clock-icon
+							include ../../../publication/images/clock.svg
+
+						p.clock-text 99:99
+
+					div.counter-contador
+						h3.cantidad 3
+						p Encontrados
+
+
+		when 'Resultados'
+
+			div.container-message.container-resultados
+				p.message
+					+image('mejorar-resultado.svg', '¿Sientes que no es el resultado correcto?')
+					a.btn.btn-cereza.btn-restart(href="#") Vuelve a jugar aquí
+
+
+	///-Bloque para contador y mensajes del juego
+
+	//boton de redes
+	div.social-fb
+
+		a.icon.icon-fb(href="#" rel="nofollow")
+			include ../../../publication/images/facebook.svg
+
+	div.share-score
+		div.share-text
+			h2
+				| ¡Qué tus amigos
+				+image('dulce-limon-gray.svg', 'ácidos y dulces')
+				span conozcan los resultados!
+			p
+				| Compártelos en tus redes sociales
+				a.btn.btn-cereza(href="#" rel="nofollow") aquí.
+
+	///-boton de redes
+
+
+
+///-Footer
+
+//Scripts
+//-Estos son los scripts que van en todos los htmls del desarrollo
+if debug == true
+
+	script(src='js/libs/jquery.js')
+	script(src='js/libs/bootstrap.min.js')
+
+else
+
+	script(src="js/libs.min.js")

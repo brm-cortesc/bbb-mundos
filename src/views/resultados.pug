@@ -1,0 +1,47 @@
+//-Layout Base
+extends ../templates/base.pug
+
+//-Etiqueta Title
+block title
+	-var titulo = "Resultados";
+	title BON BON BUM Cereza Limón
+
+//-Etiqueta Metadescription
+block description
+	meta(name="description", content="BON BON BUM Cereza Limón" )
+
+
+block content
+	section.container-fluid
+		div.row
+			div.circle.circle-xl.circle-resultado
+				p ¡Eres un duro, haz completado todo el juego!
+
+				div.resumen
+					div.resumen.resumen-dulce
+						p.
+							Encontraste <strong class="resumen-dulce-cant">5</strong> Bon Bon Bum en el lado
+
+						+image('dulce.svg', 'Dulce')
+
+					div.resumen.resumen-acido
+						p.
+							Encontraste <strong class="resumen-acido-cant">4</strong> Bon Bon Bum en el lado
+
+						+image('acido.svg', 'Ácido')
+
+				p Ahora sabes en que mundo va mejor tu personalidad.
+
+		div.container-divider
+			div.divider.divider-left
+				a.hidden(href="cereza.html")
+					+image('btn-dulces.png')
+			div.divider.divider-right
+				a.hidden(href="limon.html")
+					+image('btn-acidos.png')
+
+
+
+
+block Scripts
+	//-Acá se ponen js que solo vayan en ésta página

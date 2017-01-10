@@ -1,0 +1,29 @@
+//-Layout Base
+extends ../templates/base.pug
+
+//-Etiqueta Title
+block title
+	-var titulo = "Cereza";
+	title BON BON BUM Cereza Limón
+
+//-Etiqueta Metadescription
+block description
+	meta(name="description", content="BON BON BUM Cereza Limón" )
+
+
+block content
+	section.container-fluid
+		div.row
+			div.circle.circle-m.circle-intro.time-over
+				+image('time-over.svg', '¡El tiempo se ha terminado!')(class="img-time-over")
+
+		div#map
+
+
+
+
+block Scripts
+	script(src="js/bbb-mundos.cereza.js")
+	script( async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGccXwL43E0sz0IyQCs6unX-ydBY3SCNs&callback=initMap")
+
+	//-Acá se ponen js que solo vayan en ésta página

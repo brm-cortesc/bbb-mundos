@@ -1,0 +1,54 @@
+::selection /* WebKit/Blink Browsers */
+	background $Gris
+	color #fff
+	text-shadow 0px 0px 5px rgba(255, 255, 255, .75)
+
+::-moz-selection /* Gecko Browsers */
+	background $Gris
+	color #fff
+	text-shadow 0px 0px 5px rgba(255, 255, 255, .75)
+
+
+::-webkit-file-upload-button
+	cursor pointer
+
+a
+	color $Rojo[0]
+	transitionBase()
+
+	&:hover
+		text-decoration underline
+
+	img
+		border 0 !important
+
+body
+	background-color #fff
+	color $Gris
+	cuadrado(100%)
+	// display flex
+	font-family $FontStack
+	font-size 1.4rem
+	font-weight $Light
+	height 100vh
+	line-height 1.2
+	position relative
+	overflow hidden
+
+
+h1,h2,h3,h4,h5,h6
+	line-height 1.4
+	margin 0.5rem auto
+
+html
+	position relative
+	height 100%
+
+input,select,textarea
+	&:active
+	&:focus
+		outline none !important
+
+
+p
+	margin 0.5rem auto

@@ -1,0 +1,47 @@
+//-Layout Base
+extends ../templates/base.pug
+
+//-Etiqueta Title
+block title
+	-var titulo = "Home";
+	title BON BON BUM Cereza Limón
+
+//-Etiqueta Metadescription
+block description
+	meta(name="description", content="BON BON BUM Cereza Limón" )
+
+
+block content
+	section.container-fluid.container-home
+
+		div.row
+			div.circle.circle-xl.circle-intro.hidden
+				p En el mundo existen dos tipos de personas,
+				+image('dulces-acidos.svg', 'los dulces y los ácidos')
+
+				h3 ¿tú cuál eres?
+				p Elige en qué lado quieres estar y trata de encontrar todos los Bon Bon Bum que puedas.
+
+				a.btn.btn-cereza(href="#") Empieza aquí
+
+
+			div.circle.circle-s.circle-select
+
+				div.slider-selector
+					a(href="#")
+						include ../../publication/images/arrows.svg
+
+
+
+	div.container-divider
+		div.divider.divider-left
+			a(href="cereza.html")
+				+image('btn-dulces.png')
+		div.divider.divider-right
+			a(href="limon.html")
+				+image('btn-acidos.png')
+
+
+
+block Scripts
+	//-Acá se ponen js que solo vayan en ésta página

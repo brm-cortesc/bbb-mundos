@@ -1,0 +1,120 @@
+.logo-brand
+  bottom 6rem
+  height 19.7rem
+  left @bottom
+  margin 0
+  position absolute
+  width 16.4rem
+
+    img
+      height auto
+      max-width 100%
+      width 100%
+
+.social-fb
+  bottom 6rem
+  cuadrado(8.6rem)
+  position absolute
+  right @bottom
+  z-index 2
+
+  a
+    display block
+    cuadrado(100%)
+    position relative
+
+    &::before
+      border 2px solid $Facebook
+      border-radius 100%
+      content ''
+      cuadrado(10.6rem)
+      display block
+      left -1rem
+      position absolute
+      top -1rem
+      transform scale(0)
+      transform-origin center
+      transitionBase()
+      z-index -1
+
+    &:hover
+      &::before
+        transform scale(1)
+
+      svg
+        transform scale(0.95)
+
+
+
+
+    svg
+      cuadrado(100%)
+      transitionBase()
+
+    &.active
+      &::before
+        transform scale(1)
+
+      svg
+        transform scale(0.95)
+
+  &.active
+    &>a
+      &::before
+        transform scale(1)
+
+      svg
+        transform scale(0.95)
+
+    .share-score
+      pointer-events all
+      transform scale(1)
+
+  &:hover
+    & + .share-score
+      transform scale(0.7)
+
+.share-score
+  background-color #fff
+  border-radius 100%
+  bottom -26%
+  height 0
+  padding-bottom 80rem
+  pointer-events none
+  position absolute
+  right -16%
+  transform scale(0)
+  transform-origin bottom right
+  transitionBase()
+  width @padding-bottom
+  z-index 0
+
+  .share-text
+    margin 14rem 8rem 0
+    max-width 36.4rem
+    opacity 0
+    text-align center
+    transitionBase(,0.6s,)
+    width 100%
+
+    h2
+      font-size 3.2rem
+      line-height 1.1
+      font-weight $Light
+
+      span
+        font-size 2.6rem
+    img
+      height auto
+      max-width 100%
+      width 100%
+
+    .btn
+      max-width 25rem
+
+  &.active
+    pointer-events all
+    transform scale(1)
+
+    .share-text
+      opacity 0.99

@@ -1,0 +1,25 @@
+//-Layout Base
+extends ../templates/base.pug
+
+//-Etiqueta Title
+block title
+	-var titulo = "Limon";
+	title BON BON BUM Cereza Limón
+
+//-Etiqueta Metadescription
+block description
+	meta(name="description", content="BON BON BUM Cereza Limón" )
+
+
+block content
+	section.container-fluid
+		div.row
+			div.circle.circle-m.circle-intro.time-over
+				+image('time-over.svg', '¡El tiempo se ha terminado!')(class="img-time-over")
+
+		div#map
+
+
+
+block Scripts
+	//-Acá se ponen js que solo vayan en ésta página

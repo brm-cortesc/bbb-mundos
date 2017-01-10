@@ -1,0 +1,204 @@
+.bg
+  &-bubble
+    background-image radial-gradient(rgba($Gris, 0.5) 30%, transparent 0), radial-gradient(rgba($Gris, 0.5) 30%, transparent 0)
+    background-size 1rem
+    background-position 0 0, 0.5rem 0.5rem
+
+
+.circle
+  background-color #fff
+  border-radius 100%
+  box-shadow 7px 7px 5px 0px rgba(0,0,0,0.3)
+  height 0
+  margin 0 auto
+  position absolute
+  text-align center
+  z-index 2
+
+  &-intro
+    h3
+      font-size 3.8rem
+      margin-bottom 0
+
+    p
+      font-size 2.7rem
+      margin-top 8rem
+      max-width: 29.7rem
+
+      &:nth-of-type(2)
+        font-size 1.6rem
+        margin-top 0.5rem
+        max-width 35rem
+
+    .btn
+      max-width 30rem
+
+  &-s
+    left ( (100% - 15%) / 2 )
+    margin-top 19%
+    padding-bottom 15%
+    top ( (100% - @padding-bottom) / 2 )
+    width @padding-bottom
+
+  &-m
+    left ( (100% - 40%) / 2 )
+    margin-top 4%
+    padding-bottom 40%
+    top ( (100% - @padding-bottom) / 2 )
+    width @padding-bottom
+
+    .img-time-over
+      display block
+      height auto
+      margin 17.9rem  auto 0
+      margin-top
+      max-width 100%
+
+  &-xl
+    left ( (100% - 50%) / 2 )
+    margin-top 5%
+    padding-bottom 50%
+    top ( (100% - @padding-bottom) / 2 )
+    width  @padding-bottom
+
+  &-resultado
+    p
+      font-size 2.7rem
+      margin 10rem auto 2rem
+      max-width 34.3rem
+
+
+      &:nth-of-type(2)
+        margin-top 2rem
+
+.counter
+  &-contador,
+  &-time
+    display inline-block
+    vertical-align top
+    width 49.3%
+
+  &-contador
+    .cantidad
+      font-size 8rem
+      line-height 1
+      margin-top 3rem
+
+  &-time
+    .clock
+      &-icon
+        margin 5.3rem auto 0
+        height 3.9rem
+        width 3.5rem
+        svg
+          cuadrado(100%)
+
+      &-text
+        font-size 4rem
+        line-height 1
+        margin-top 0
+
+.divider
+  background-repeat no-repeat
+  background-size cover
+  bottom 0
+  height 100%
+  position absolute
+  top 0
+  transitionBase( , , cubic-bezier(.15,.79,.85,.51))
+  width 100%
+
+  a
+    display block
+    cuadrado(25.5rem)
+    position absolute
+    left 50%
+    top @left
+    transform translate3d(-@left,-@left,0)
+
+    &::before
+      background-color rgba(255,255,255,0.15)
+      border 4px solid
+      circ(28rem)
+      content ''
+      left -1.2rem
+      position absolute
+      top @left
+      transitionBase()
+      transform scale(0)
+      transform-origin center
+      z-index -1
+
+    &:hover
+      &::before
+        transform scale(1)
+
+      img
+        transform scale(0.9)
+
+    img
+      height auto
+      max-width 100%
+      transitionBase()
+      width 100%
+
+  &-left
+    path('cereza-01.jpg')
+    left 0
+    width 50%
+
+    a
+
+      &::before
+        border-color $Rojo[0]
+
+  &-right
+    path('limon-01.jpg')
+    right 0
+    width 50%
+    a
+      &::before
+        border-color $Verde[0]
+
+
+.message
+  text-align center
+
+  a
+    display block
+    margin 4rem auto 0
+
+
+.resumen
+
+  img, p
+    vertical-align top
+    display inline-block
+
+  img
+    margin-left 2rem
+
+  p
+    font-size 2.7rem
+    margin 0 auto
+    max-width 27rem
+    text-align right
+
+  &-acido
+    color $Verde[1]
+  &-dulce
+    color $Rojo[1]
+
+.slider
+  &-selector
+    height 3.3rem
+    left 50%
+    margin 0 auto
+    position absolute
+    top @left
+    transform translate3d(-@left,-@left, 0 )
+    width 9.7rem
+
+    a, img, svg
+      display block
+      cuadrado(100%)

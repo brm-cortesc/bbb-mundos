@@ -1,0 +1,14 @@
+//Header
+header.container-fluid
+
+	div.row
+		div.container-logo.bg-bubble
+			if titulo == "Home"
+				h1
+					+image('logo-2-sabores-bbb.png')(class="logo")
+			else
+
+				h2
+					a(href="index.html"): +image('logo-2-sabores-bbb.png')(class="logo")
+
+///-Header
