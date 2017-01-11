@@ -1,0 +1,214 @@
+@media (max-width:1024px) and (orientation: landscape)
+	.circle
+		&-intro
+			img
+				max-width 44%
+			p
+				font-size 1.4rem
+
+		&-m
+			.img-time-over
+				margin 12.6rem auto 0
+
+		&-s
+			margin-top 10%
+	.container
+		&-logo
+			cuadrado(20rem)
+			margin -10rem auto 0
+
+			h1, h2
+				bottom 2rem
+				left 15%
+				height 7rem
+				max-width 70%
+
+	.divider
+		a
+			cuadrado(16rem)
+
+			&::before
+				cuadrado(17rem)
+				left -0.5rem
+				top @left
+
+		&-left
+			a
+				left 20%
+				transform translate3d(0%,-50%,0)
+
+		&-right
+			a
+				left inherit
+				right 20%
+				transform translate3d(0%,-50%,0)
+
+	.lock
+		display none !important
+
+	.logo-brand
+		height 11.7rem
+		width 9.4rem
+
+	.share-score
+		bottom -34rem
+		z-index 2
+	.social-fb
+		cuadrado(6rem)
+		z-index 3
+		a
+			&::before
+				cuadrado(7rem)
+				left -0.5rem
+				top @left
+
+	.slider-selector
+		max-width 90%
+
+@media (max-width:900px) and (orientation: landscape)
+	.circle
+		&-m
+			.img-time-over
+				margin 40% auto 0
+
+		&-resultado
+			p
+				font-size 1.4rem
+				margin 8rem auto 1rem
+
+	.container
+		&-counter
+			&::before
+				height 18.8rem
+				top -4%
+				width 7.5rem
+
+		&-message
+			bottom -13rem
+			padding-bottom 27rem
+			width @padding-bottom
+
+	.counter
+		&-contador
+			.cantidad
+				font-size 6rem
+				margin-top 4rem
+
+		&-time
+			.clock-text
+				font-size 3rem
+
+	.resumen
+		img
+			max-width 8rem
+		p
+			margin-top 0
+			max-width 17rem
+
+@media (max-width:768px) and (orientation: landscape)
+	.divider
+		a
+			cuadrado(12rem)
+
+			&::before
+				cuadrado(13rem)
+
+@media (max-width:720px) and (orientation: landscape)
+	.circle
+		&-xl
+			left ( (100% - 50%) / 2 )
+			margin-top 2%
+			padding-bottom 50%
+			top ( (100% - @padding-bottom) / 2 )
+			width  @padding-bottom
+
+
+@media (max-width:640px) and (orientation: landscape)
+	.circle-resultado
+		p
+			margin 4rem auto 1rem
+			max-width 19rem
+
+	.container
+		&-logo
+			cuadrado(10rem)
+			margin -5rem auto 0
+
+			h1, h2
+				bottom 0
+				left 15%
+				height 4rem
+				max-width 70%
+
+		&-counter
+			&::before
+				display none
+		&-message
+			bottom -14rem
+
+	.counter
+		&-contador
+			.cantidad
+				font-size 4rem
+				margin-top 4rem
+
+		&-time
+			.clock-icon
+				cuadrado(2.5rem)
+			.clock-text
+				font-size 2rem
+
+	.resumen
+		p
+			margin-top 0
+	.share-score
+		bottom -26rem
+		padding-bottom 62rem
+		right -37rem
+		width @padding-bottom
+
+		.share-text
+			max-width 15rem
+			h2
+				font-size 2rem
+
+				span
+					font-size 1.3rem
+
+@media (max-width:570px) and (orientation: landscape)
+	.circle
+		&-intro
+			h3
+				font-size 1.8rem
+			img
+				max-width 37%
+
+			p
+				font-size 1.2rem
+
+				&:nth-of-type(2)
+					font-size 1.2rem
+
+	.container
+		&-message
+			bottom -18rem
+	.counter
+		&-contador
+			.cantidad
+				margin-top 2rem
+		&-time
+			.clock-icon
+				margin 3.3rem auto 0
+
+	.logo-brand,
+	.social-fb
+		bottom 0.5rem
+
+
+	.logo-brand
+		left 0.5rem
+		height 7.7rem
+		width 6.4rem
+
+	.social-fb
+		right 0.5rem

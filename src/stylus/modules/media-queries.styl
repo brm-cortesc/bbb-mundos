@@ -1,0 +1,156 @@
+@media (max-width:1690px)
+	.circle
+		&-m
+			left ( (100% - 30%) / 2 )
+			margin-top 5%
+			padding-bottom 30%
+			top ( (100% - @padding-bottom) / 2 )
+			width  @padding-bottom
+
+			.img-time-over
+				margin 14.6rem auto 0
+				max-width 90%
+
+@media (max-width:1590px)
+	.circle
+		&-intro
+			h3
+				font-size 3rem
+			img
+				height auto
+				max-width 53%
+				width 100%
+
+			p
+				font-size 2.2rem
+				margin-top 4rem
+				max-width 24.7rem
+
+				&:nth-of-type(2)
+					font-size 1.4rem
+					max-width 30rem
+
+		&-resultado
+			p
+				font-size 1.8rem
+				margin-top 6rem
+				max-width 26rem
+		&-xl
+			left ( (100% - 40%) / 2 )
+			margin-top 5%
+			padding-bottom 40%
+			top ( (100% - @padding-bottom) / 2 )
+			width  @padding-bottom
+
+	.container
+		&-counter
+			&::before
+				height 25.8rem
+				top -4%
+				width 9.5rem
+		&-logo
+			cuadrado(30rem)
+			margin -15rem auto 0
+
+			h1, h2
+				left 4.8rem
+				height 11rem
+				max-width 70%
+
+		&-message
+			bottom -19rem
+
+	.divider
+		a
+			cuadrado(18.5rem)
+
+			&::before
+				cuadrado(21.5rem)
+				left -1.8rem
+				top @left
+
+	.logo-brand,
+	.social-fb
+		bottom 4rem
+		right @bottom
+
+	.logo-brand
+		right 4rem
+
+	.resumen
+		img
+			max-width 12rem
+
+		p
+			margin 0 auto
+			max-width 17rem
+
+	.share-score
+		bottom -25rem
+		right -24rem
+		padding-bottom 71rem
+		width @padding-bottom
+
+		.share-text
+			margin 11rem 8rem 0
+
+@media (max-width:1400px)
+	.circle
+		&-intro
+			h3
+				font-size 2.2rem
+			p
+				font-size 1.7rem
+				margin-top 2.6rem
+				max-width 18rem
+
+				&:nth-of-type(2)
+					max-width 26rem
+
+			.btn
+				max-width 12rem
+
+
+		&-m
+			margin-top 2%
+
+		&-xl
+			left ( (100% - 40%) / 2 )
+			margin-top 5%
+			padding-bottom 40%
+			top ( (100% - @padding-bottom) / 2 )
+			width  @padding-bottom
+	.share-score
+		bottom -31rem
+		right -39rem
+
+		.share-text
+			margin 12rem 8rem 0
+			max-width 23rem
+
+			h2
+				font-size 2.7rem
+
+				span
+					font-size 2rem
+
+	.logo-brand,
+	.social-fb
+		bottom 2rem
+		right @bottom
+
+	.logo-brand
+		height 16.7rem
+		left 2rem
+		width 13.4rem
+
+
+	.social-fb
+		cuadrado(7.6rem)
+		a
+			&::before
+				cuadrado(9.6rem)
+
+
+@import 'landscape'
+@import 'portrait'
