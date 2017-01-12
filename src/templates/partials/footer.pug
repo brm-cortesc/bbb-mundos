@@ -9,7 +9,7 @@ footer.container-fluid
 	case titulo
 		when 'Cereza'
 
-			div.container-message.hidden
+			div.container-message.container-iniciar
 				p.message
 					a.start(href="#"): +image('clic-aqui.svg', 'Clic aquí')
 					span Cuando estés listo
@@ -20,15 +20,15 @@ footer.container-fluid
 						div.clock-icon
 							include ../../../publication/images/clock.svg
 
-						p.clock-text 99:99
+						p.clock-text 00:00
 
 					div.counter-contador
-						h3.cantidad 3
+						h3.cantidad 7
 						p Encontrados
 
 		when 'Limon'
 
-			div.container-message.hidden
+			div.container-message.container-iniciar
 				p.message
 					a.start(href="#"): +image('clic-aqui.svg', 'Clic aquí')
 					span Cuando estés listo
@@ -39,7 +39,7 @@ footer.container-fluid
 						div.clock-icon
 							include ../../../publication/images/clock.svg
 
-						p.clock-text 99:99
+						p.clock-text 00:00
 
 					div.counter-contador
 						h3.cantidad 3
@@ -84,6 +84,7 @@ if debug == true
 
 	script(src='js/libs/jquery.js')
 	script(src='js/libs/bootstrap.min.js')
+	script(src='js/libs/velocity.min.js')
 	script(src='js/bbb-mundos.init.js')
 
 else

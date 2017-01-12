@@ -1,6 +1,69 @@
 ### Add event to watch orientation ###
-
 mql = window.matchMedia('(orientation: portrait)')
+
+### Animacion base de entrada y salida de elementos ###
+window.anim = (el1,el2) ->
+  $(el1)
+    .velocity('fadeIn', {
+      duration: 500,
+      easing: 'ease'
+
+    })
+
+  $(el2)
+    .velocity('fadeOut',{
+      queue: false,
+      display:'none'
+    })
+
+
+  return
+
+
+### Init de contador ###
+counter = (time, el) ->
+  ## Armamos intervalo ###
+  timer =
+    setInterval ->
+      ### Restamos 1 segundo ###
+      time--
+
+      ### Validamos para agregar 0 ###
+      if time >= 10
+        $(el + ' .clock-text').text('00:'+ time)
+
+      else
+        $(el + ' .clock-text').text('00:0'+ time)
+
+      ten()
+      stop()
+      return
+    , 1000
+
+  ### Alerta de ultimos 10 segundos ###
+  ten = ->
+    if time == 10
+      $(el).addClass 'last-ten'
+      return
+
+  ### Limpiamos el intervalo, paramos conteo y enviamos a visual de resultados ###
+  stop = ->
+    if time <= 0
+      console.log 'para ' + time
+      clearInterval timer
+      window.anim('.time-over', '.container-counter')
+
+      ### Lo enviamos a la página de resultados ###
+      setTimeout ->
+        window.location.href = '/resultados.html'
+        return
+      , 2000
+
+    return
+
+  return
+### Volvemos el contador un objeto global ###
+window.counter = counter
 
 jQuery(document).ready ($) ->
   splash = $('.lock')
@@ -19,11 +82,110 @@ jQuery(document).ready ($) ->
     if m.matches
       console.log 'cambio a vertical'
       splash.removeClass('hidden')
+      return
 
 
     else
       console.log 'cambio a landscape'
       splash.addClass('hidden')
+      return
+
+
+  ### Show start ###
+  $('.container-home a.btn')
+    .click (e) ->
+      e.preventDefault()
+
+      window.anim('.circle-select', '.circle-intro')
+
+      $('.divider a')
+        .velocity('fadeIn',{
+          queue:false,
+          duration: 500
+        })
+
+      $('.divider').addClass('active')
+
+
+      return false
+
+
+  ### Animacion de cada zona en hover ###
+  divider = $('.divider')
+
+  # divider.mouseover ->
+  divider.mouseover ->
+
+    if $(@).hasClass('active')
+
+      divider.addClass 'no-hover'
+      $(@).removeClass 'no-hover'
+      $(@).addClass 'hover'
+
+      if $(@).hasClass('divider-left')
+        $('.container-divider, .circle-select').removeClass('hover-l hover-r')
+        $('.container-divider, .circle-select').addClass('hover-l')
+
+      else
+        $('.container-divider, .circle-select').removeClass('hover-l hover-r')
+        $('.container-divider, .circle-select').addClass('hover-r')
+
+    return
+
+  divider.mouseout ->
+    if $(@).hasClass('active')
+      $('.container-divider, .circle-select').removeClass('hover-l hover-r')
+      divider.removeClass('hover no-hover')
+    return
+
+  ### Animacion de seleccion de seccion ###
+  $('.divider a')
+    .click (e) ->
+      e.preventDefault()
+      ### Validacion de izquerda/derecha ###
+      if $(@).parent().hasClass 'divider-right'
+
+        ### Clases para poner a correr animacion ###
+        $(@).parent().removeClass 'hover no-hover'
+        $(@).parent().addClass('selected')
+        $(@).parent().parent().find('.divider-left').addClass('no-selected')
+        $('.container-divider').addClass('selected-r')
+
+        ### Ocultamos circulo del medio ###
+        $('.circle-select')
+          .velocity('fadeOut')
+
+        ### Lo direccionamos al mapa correspondiente ###
+        setTimeout ->
+          window.location.href = '/limon.html'
+          return
+        ,2100
+
+      else if $(@).parent().hasClass 'divider-left'
+        $(@).parent().addClass('selected')
+        $(@).parent().parent().find('.divider-right').addClass('no-selected')
+
+        $('.container-divider').addClass('selected-l')
+
+        $('.circle-select')
+          .velocity('fadeOut')
+
+        ### Lo direccionamos al mapa correspondiente ###
+        setTimeout ->
+          window.location.href = '/cereza.html'
+          return
+        ,2100
+
+
+      return
+
+  ### Mostramos Compartir en Facebook ###
+  $('.icon-fb')
+    .click (e) ->
+      e.preventDefault()
+      $('.social-fb, .share-score ').toggleClass 'active'
+      return
+
 
 
   return

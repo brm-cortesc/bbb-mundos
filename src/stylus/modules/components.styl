@@ -1,3 +1,16 @@
+#map
+  centrarAb()
+  height 0
+  padding-bottom 100%
+  pointer-events none
+  width @padding-bottom
+
+  &>div
+    background-color transparent !important
+
+  &.play
+    pointer-events all !important
+
 .bg
   &-bubble
     background-image radial-gradient(rgba($Gris, 0.5) 30%, transparent 0), radial-gradient(rgba($Gris, 0.5) 30%, transparent 0)
@@ -61,6 +74,26 @@
     top ( (100% - @padding-bottom) / 2 )
     width  @padding-bottom
 
+  &-select
+    display none
+    transitionBase()
+    &.hover-r
+      left 31.5%
+
+    &.hover-l
+      left 53.5%
+
+  &-steps
+    img
+      display block
+      height auto
+      margin 12rem auto 0
+      max-width 80%
+      width 100%
+
+    p
+      margin-top 0
+
   &-resultado
     p
       font-size 2.7rem
@@ -99,17 +132,21 @@
         margin-top 0
 
 .divider
+  animation-duration 2s
+  animation-fill-mode forwards
+  animation-iteration-count 1
+  animation-timing-function ease-in-out
   background-repeat no-repeat
   background-size cover
   bottom 0
   height 100%
   position absolute
   top 0
-  transitionBase( , , cubic-bezier(.15,.79,.85,.51))
+  transitionBase()
   width 100%
 
   a
-    display block
+    display none
     cuadrado(25.5rem)
     position absolute
     left 50%
@@ -146,11 +183,12 @@
     path('cereza-01.jpg')
     left 0
     width 50%
-
     a
 
       &::before
         border-color $Rojo[0]
+
+
 
   &-right
     path('limon-01.jpg')
@@ -159,6 +197,37 @@
     a
       &::before
         border-color $Verde[0]
+
+
+  &.hover
+    width 60%
+    a
+      &::before
+        transform scale(1)
+
+  &.selected
+    animation-name full
+    z-index 2
+
+  &.no-selected
+    animation-name out
+    z-index 1
+
+  &.no-hover
+    width 40%
+
+
+.last-ten
+  .clock
+    &-icon
+      animation hurry 1s infinite alternate ease-in-out
+      svg
+        path
+          fill darken($Rojo[0], 20%)
+    &-text
+      color darken($Rojo[0], 20%)
+
+
 
 
 .lock
@@ -210,3 +279,15 @@
     a, img, svg
       display block
       cuadrado(100%)
+
+.start
+  display block
+  height 7.7rem
+  width 20rem
+  img
+    height auto
+    max-width 100%
+    width 100%
+
+.time-over
+  display none

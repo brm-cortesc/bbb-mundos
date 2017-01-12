@@ -122,6 +122,19 @@
 			top ( (100% - @padding-bottom) / 2 )
 			width  @padding-bottom
 
+		&-steps
+			img
+				margin-top 3rem
+				max-width 67%
+
+			p
+				margin-top 0
+
+	.start
+		height auto
+		margin-top 2rem !important
+		max-width 40%
+		width 100%
 
 @media (max-width:640px) and (orientation: landscape)
 	.circle-resultado
@@ -189,6 +202,14 @@
 				&:nth-of-type(2)
 					font-size 1.2rem
 
+		&-steps
+			img
+				margin-top 3rem
+				max-width 67%
+
+			p
+				margin-top 0
+
 	.container
 		&-message
 			bottom -18rem
@@ -212,3 +233,24 @@
 
 	.social-fb
 		right 0.5rem
+
+
+@media (max-height:570px) and (orientation: landscape)
+	.circle
+		&-s
+			margin-top 5%
+			
+		&-xl
+			margin-top 2%
+
+		&-resultado
+			p
+				margin-top 4rem
+
+		&-steps
+			img
+				margin-top 5rem
+
+	.resumen
+		p
+			margin-top 0
