@@ -6,7 +6,7 @@ jQuery(document).ready ($) ->
     .click (e) ->
       e.preventDefault()
 
-      window.anim('.container-counter', '.container-iniciar')
+      animBase('.container-counter', '.container-iniciar')
 
       $('.circle-steps')
         .velocity('fadeOut')
@@ -17,7 +17,7 @@ jQuery(document).ready ($) ->
 
       ### Iniciamos contador ###
 
-      window.counter(30, '.container-counter')
+      counter(12, '.container-counter')
 
 
       return

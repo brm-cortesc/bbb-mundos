@@ -2,7 +2,7 @@
 mql = window.matchMedia('(orientation: portrait)')
 
 ### Animacion base de entrada y salida de elementos ###
-window.anim = (el1,el2) ->
+animBase = (el1,el2) ->
   $(el1)
     .velocity('fadeIn', {
       duration: 500,
@@ -51,7 +51,8 @@ counter = (time, el) ->
     if time <= 0
       console.log 'para ' + time
       clearInterval timer
-      window.anim('.time-over', '.container-counter')
+      animBase('.time-over', '.container-counter')
+      $('#map').removeClass 'play'
 
       ### Lo enviamos a la página de resultados ###
       setTimeout ->
@@ -62,8 +63,32 @@ counter = (time, el) ->
     return
 
   return
-### Volvemos el contador un objeto global ###
-window.counter = counter
+### Funcion para fullscreen ###
+toggleFullScreen =  ->
+  if document.fullScreenElement && document.fullScreenElement != null or !document.mozFullScreen and !document.webkitIsFullScreen
+    if document.documentElement.requestFullScreen
+      ### normal function ###
+      document.documentElement.requestFullScreen()
+
+    else if document.documentElement.mozRequestFullScreen
+      ### pointing moz  ###
+      document.documentElement.mozRequestFullScreen()
+
+    else if document.documentElement.webkitRequestFullScreen
+      ### pointing webkit  ###
+      document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT)
+
+  else
+    if document.cancelFullScreen
+      document.cancelFullScreen()
+
+    else if document.mozCancelFullScreen
+      document.mozCancelFullScreen()
+
+    else if document.webkitCancelFullScreen
+      document.webkitCancelFullScreen()
+
+  return
 
 jQuery(document).ready ($) ->
   splash = $('.lock')
@@ -71,10 +96,12 @@ jQuery(document).ready ($) ->
   if mql.matches
     console.log 'vertical'
     splash.removeClass('hidden')
+    $('body').addClass 'body-lock'
 
   else
     console.log 'landscape'
     splash.addClass('hidden')
+    $('body').removeClass 'body-lock'
 
   ### identificar si cambio orientación ###
   mql.addListener (m) ->
@@ -82,12 +109,14 @@ jQuery(document).ready ($) ->
     if m.matches
       console.log 'cambio a vertical'
       splash.removeClass('hidden')
+      $('body').addClass 'body-lock'
       return
 
 
     else
       console.log 'cambio a landscape'
       splash.addClass('hidden')
+      $('body').removeClass 'body-lock'
       return
 
 
@@ -96,7 +125,7 @@ jQuery(document).ready ($) ->
     .click (e) ->
       e.preventDefault()
 
-      window.anim('.circle-select', '.circle-intro')
+      animBase('.circle-select', '.circle-intro')
 
       $('.divider a')
         .velocity('fadeIn',{

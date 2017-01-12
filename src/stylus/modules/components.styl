@@ -13,9 +13,11 @@
 
 .bg
   &-bubble
-    background-image radial-gradient(rgba($Gris, 0.5) 30%, transparent 0), radial-gradient(rgba($Gris, 0.5) 30%, transparent 0)
-    background-size 1rem
-    background-position 0 0, 0.5rem 0.5rem
+    // background-image radial-gradient(rgba($Gris, 0.5) 30%, transparent 0), radial-gradient(rgba($Gris, 0.5) 30%, transparent 0)
+    path('pattern.png')
+    background-position bottom center
+    background-repeat no-repeat
+    background-size 100%
 
 
 .circle
@@ -101,7 +103,7 @@
       max-width 34.3rem
 
 
-      &:nth-of-type(2)
+      &:nth-of-type(3)
         margin-top 2rem
 
 .counter
@@ -231,12 +233,33 @@
 
 
 .lock
-  background-color $Gris
-  color #fff
+  background-color #fff
+  path('pattern-tilt.png')
+  background-position bottom center
+  background-size 100%
+  background-repeat no-repeat
   centrarAb()
   cuadrado(100%)
   position absolute
   z-index 9999
+
+  h3
+    font-size 1.8rem
+    line-height 1.1
+    max-width 80%
+
+  .tilt-icon
+    height 14.3rem
+    margin 3rem auto
+    width 16.8rem
+
+    svg
+      cuadrado(100%)
+      animation tilt-icon 1s infinite cubic-bezier(.74,.07,.17,.81) alternate
+
+    #arrows
+      animation tilt-arrows 1s infinite cubic-bezier(.74,.07,.17,.81) alternate
+      opacity 0
 
 .message
   text-align center

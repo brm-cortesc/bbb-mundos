@@ -4,7 +4,7 @@ jQuery(document).ready ($) ->
       console.log 'start'
       e.preventDefault()
 
-      window.anim('.circle-select', '.circle-resultado')
+      animBase('.circle-select', '.circle-resultado')
 
       $('.divider a')
         .velocity('fadeIn',{

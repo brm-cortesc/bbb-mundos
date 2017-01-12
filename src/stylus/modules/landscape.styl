@@ -188,7 +188,7 @@
 				span
 					font-size 1.3rem
 
-@media (max-width:570px) and (orientation: landscape)
+@media (max-width:590px) and (orientation: landscape)
 	.circle
 		&-intro
 			h3
@@ -199,7 +199,7 @@
 			p
 				font-size 1.2rem
 
-				&:nth-of-type(2)
+				&:nth-of-type(3)
 					font-size 1.2rem
 
 		&-steps
@@ -209,10 +209,26 @@
 
 			p
 				margin-top 0
+		&-resultado
+			&>p
+				display none
+			p
+				max-width 50%
+			.hidden
+				display block !important
+
 
 	.container
 		&-message
 			bottom -18rem
+
+		&-resultados
+			bottom -16.7rem
+
+			img
+				margin-top 2rem
+				max-width 50%
+
 	.counter
 		&-contador
 			.cantidad
@@ -231,15 +247,26 @@
 		height 7.7rem
 		width 6.4rem
 
+	.resumen
+		max-width 90%
+		margin 0.5rem auto
+		text-align center
+		img, p
+			display inline
+
+		img
+			margin-left 0
+			max-width 4rem
+
 	.social-fb
 		right 0.5rem
 
 
-@media (max-height:570px) and (orientation: landscape)
+@media (max-height:620px) and (orientation: landscape)
 	.circle
 		&-s
 			margin-top 5%
-			
+
 		&-xl
 			margin-top 2%
 

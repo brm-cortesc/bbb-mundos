@@ -5,8 +5,9 @@ jQuery(document).ready ($) ->
   $('.start')
     .click (e) ->
       e.preventDefault()
+      toggleFullScreen()
 
-      window.anim('.container-counter', '.container-iniciar')
+      animBase('.container-counter', '.container-iniciar')
 
       $('.circle-steps')
         .velocity('fadeOut')
@@ -17,7 +18,7 @@ jQuery(document).ready ($) ->
 
       ### Iniciamos contador ###
 
-      window.counter(30, '.container-counter')
+      counter(60, '.container-counter')
 
 
       return
