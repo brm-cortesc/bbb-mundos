@@ -1,0 +1,31 @@
+//-Layout Base
+extends ../templates/base.pug
+
+//-Etiqueta Title
+block title
+	-var titulo = "Resultados";
+	title BON BON BUM Cereza Limón
+
+//-Etiqueta Metadescription
+block description
+	meta(name="description", content="BON BON BUM Cereza Limón" )
+
+
+block content
+	section.container-fluid.container-score
+		div.row
+
+		div.container-divider
+			div.divider.divider-left
+				a(href="cereza.html")
+					+image('btn-dulces.png')
+			div.divider.divider-right
+				a(href="limon.html")
+					+image('btn-acidos.png')
+
+
+
+
+block Scripts
+	script(src="js/bbb-mundos.resultados.js")
+	//-Acá se ponen js que solo vayan en ésta página

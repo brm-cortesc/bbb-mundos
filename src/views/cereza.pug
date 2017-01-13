@@ -31,15 +31,17 @@ block Scripts
 	script(src="js/bbb-mundos.cereza.js")
 	//Load map
 	script.
+	
 		function initMap() {
 		var map = new google.maps.Map(document.getElementById('map'), {
 		center: {lat: 0, lng: 0},
-		zoom: 3,
+		zoom: zoom,
 		streetViewControl: false,
 		mapTypeControlOptions: {
 			mapTypeIds: ['moon']
 		}
 		});
+
 
 		var moonMapType = new google.maps.ImageMapType({
 		getTileUrl: function(coord, zoom) {

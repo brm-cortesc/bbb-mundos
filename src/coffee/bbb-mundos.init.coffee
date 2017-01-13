@@ -1,6 +1,6 @@
 ### Add event to watch orientation ###
 mql = window.matchMedia('(orientation: portrait)')
-
+zoom = 3
 ### Animacion base de entrada y salida de elementos ###
 animBase = (el1,el2) ->
   $(el1)
