@@ -16,7 +16,6 @@ animBase = (el1,el2) ->
       display:'none'
     })
 
-
   return
 
 
@@ -90,6 +89,16 @@ toggleFullScreen =  ->
 
   return
 
+### Cargador ###
+jQuery(window).load ->
+  $('.loader').velocity('fadeOut',{
+    complete: () ->
+      $('.loader').remove()
+      return
+
+    })
+  return
+
 jQuery(document).ready ($) ->
   splash = $('.lock')
   ### Identificar orientacion ###
@@ -118,6 +127,70 @@ jQuery(document).ready ($) ->
       splash.addClass('hidden')
       $('body').removeClass 'body-lock'
       return
+
+
+  ### Texto home si es mobile ###
+
+  if $(window).width() <= 768
+
+    ### Primer texto ###
+    $('.container-home .circle-intro p:nth-of-type(1)')
+      .velocity({
+        opacity:1,
+        translateY: '+=8rem'
+        },{
+        display:'block',
+        delay: 1000
+        complete: () ->
+          setTimeout ->
+            $('.container-home .circle-intro p:nth-of-type(1)').velocity('reverse')
+            return
+          , 3000
+          return
+      })
+
+    ### img ###
+    $('.container-home .circle-intro img')
+      .velocity({
+        opacity:1,
+        translateY: '+=1.2rem',
+        scale: '2'
+        },{
+        display:'inline',
+        delay: 4500
+        complete: () ->
+          setTimeout ->
+            $('.container-home .circle-intro img').velocity('reverse')
+            return
+          , 3000
+          return
+      })
+
+    ### texto 2 ###
+    $('.container-home .circle-intro p:nth-of-type(2)')
+      .velocity({
+        opacity:1
+        translateY: '-=2rem',
+        },{
+        display:'block',
+        delay: 8000
+        complete: () ->
+          setTimeout ->
+            $('.container-home .circle-intro p:nth-of-type(2').velocity('reverse')
+            return
+          , 5000
+          return
+      })
+
+    ### Btn CTA ###
+    $('.container-home .circle-intro a.btn')
+      .velocity({
+        opacity:1
+        translateY: '-=6.5rem',
+        },{
+        display:'block',
+        delay: 13500
+      })
 
 
   ### Show start ###

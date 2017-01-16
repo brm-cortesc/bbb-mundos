@@ -32,10 +32,10 @@ block Scripts
 		function initMap() {
 		var map = new google.maps.Map(document.getElementById('map'), {
 		center: {lat: 0, lng: 0},
-		zoom: 3,
+		zoom: 2,
 		streetViewControl: false,
 		mapTypeControlOptions: {
-			mapTypeIds: ['moon']
+			mapTypeIds: ['acidos']
 		}
 		});
 
@@ -46,19 +46,20 @@ block Scripts
 					return null;
 				}
 				var bound = Math.pow(2, zoom);
+				//- return 'images/maps/limon-1/tile_' +   Math.floor(zoom) + '_' + normalizedCoord.x + '-' + normalizedCoord.y  +'.jpg';
 				return '//mw1.google.com/mw-planetary/lunar/lunarmaps_v1/clem_bw' +
-						'/' + zoom + '/' + normalizedCoord.x + '/' +
-						(bound - normalizedCoord.y - 1) + '.jpg';
+					 '/' + zoom + '/' + normalizedCoord.x + '/' +
+					 (bound - normalizedCoord.y - 1) + '.jpg';
 		},
 		tileSize: new google.maps.Size(256, 256),
-		maxZoom: 9,
+		maxZoom: 3,
 		minZoom: 0,
 		radius: 1738000,
-		name: 'Moon'
+		name: 'Ácidos'
 		});
 
-		map.mapTypes.set('moon', moonMapType);
-		map.setMapTypeId('moon');
+		map.mapTypes.set('acidos', moonMapType);
+		map.setMapTypeId('acidos');
 		}
 
 		// Normalizes the coords that tiles repeat across the x axis (horizontally)

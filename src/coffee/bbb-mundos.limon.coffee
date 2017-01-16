@@ -5,6 +5,7 @@ jQuery(document).ready ($) ->
   $('.start')
     .click (e) ->
       e.preventDefault()
+      toggleFullScreen()
 
       animBase('.container-counter', '.container-iniciar')
 
@@ -17,9 +18,7 @@ jQuery(document).ready ($) ->
 
       ### Iniciamos contador ###
 
-      counter(12, '.container-counter')
-
-
+      counter(30, '.container-counter')
       return
 
   return

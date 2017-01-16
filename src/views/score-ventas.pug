@@ -3,7 +3,7 @@ extends ../templates/base.pug
 
 //-Etiqueta Title
 block title
-	-var titulo = "Resultados";
+	-var titulo = "Ventas";
 	title BON BON BUM Cereza Limón
 
 //-Etiqueta Metadescription
@@ -17,11 +17,22 @@ block content
 
 		div.container-divider
 			div.divider.divider-left
-				a(href="cereza.html")
-					+image('btn-dulces.png')
+				div.divider-score
+					h2
+						+image('los-dulces.svg', 'Los Dulces')
+
+					h3.score 9999
+					p puntos
+
+
 			div.divider.divider-right
-				a(href="limon.html")
-					+image('btn-acidos.png')
+				div.divider-score
+					h2
+						+image('los-acidos.svg', 'Los Ácidos')
+
+					h3.score 9999
+					p puntos
+
 
 
 

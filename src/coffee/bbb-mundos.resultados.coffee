@@ -1,9 +1,7 @@
 jQuery(document).ready ($) ->
   $('.btn-restart')
     .click (e) ->
-      console.log 'start'
       e.preventDefault()
-
       animBase('.circle-select', '.circle-resultado')
 
       $('.divider a')

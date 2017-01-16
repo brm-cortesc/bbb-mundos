@@ -15,8 +15,20 @@ block content
 	section.container-fluid
 		div.row
 			div.circle.circle-xl.circle-resultado
-				p ¡Eres un duro, has completado todo el juego!
+
+				p
+					| ¡Eres un duro,
+					//Mensaje cuando se completaron los 2 mundos
+					span.complete.hidden has completado todo el juego!
+					///-Mensaje cuando se completaron los 2 mundos
+
+					//Mensaje cuando se jugó solo un mundo
+					span.one has terminado este mundo!
+					///-Mensaje cuando se jugó solo un mundo
+
+				//Version corta para mobile
 				p.hidden ¡Eres un Duro!
+				///-Version corta para mobile
 
 
 				div.resumen
@@ -32,7 +44,21 @@ block content
 
 						+image('acido.svg', 'Ácido')
 
-				p Ahora sabes en que mundo va mejor tu personalidad.
+				p
+					//Mensaje cuando se completaron los 2 mundos
+					span.complete.hidden Ahora sabes en que mundo va mejor tu personalidad.
+					///-Mensaje cuando se completaron los 2 mundos
+
+					//Mensaje cuando se jugó solo cereza
+					span.one.one-cereza.hidden.
+						¿Te animas a explorar el lado <a href="limon.html">ácido</a>?
+					///-Mensaje cuando se jugó solo cereza
+
+					//Mensaje cuando se jugó solo limon
+					span.one.one-limon.
+						¿Te animas a explorar el lado <a href="dulce.html">dulce</a>?
+					///-Mensaje cuando se jugó solo limon
+
 
 			div.circle.circle-s.circle-select
 

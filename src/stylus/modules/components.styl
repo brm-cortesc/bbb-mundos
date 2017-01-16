@@ -200,6 +200,27 @@
       &::before
         border-color $Verde[0]
 
+  &-score
+    background-color #fff
+    border-radius 100%
+    box-shadow 7px 7px 5px 0px rgba(0,0,0,0.3)
+    height 0
+    left 25%
+    padding-bottom (@left * 2)
+    position absolute
+    top @left
+    width @padding-bottom
+
+    h2,h3, p
+      margin auto
+      max-width 80%
+      text-align center
+
+    h2
+      margin-top 8rem
+
+    h3
+      font-size 4rem
 
   &.hover
     width 60%
@@ -231,6 +252,54 @@
 
 
 
+.loader
+  background-color rgba(#fff, 0.9)
+  centrarAb()
+  cuadrado(100%)
+  z-index 15
+
+  div
+    background-color lighten($Gris, 95%)
+    border-radius 100%
+    box-shadow 7px 7px 5px 0px rgba(0,0,0,0.3)
+    display block
+    left 33%
+    padding-bottom (100% - (@left * 2))
+    position absolute
+    text-align center
+    top (@left / 2)
+    width @padding-bottom
+
+    &::after, &::before
+      animation-duration 1s
+      animation-iteration-count infinite
+      animation-timing-function ease-in-out
+      mix-blend-mode darken
+      content ' '
+      border-radius 100%
+      display block
+      position absolute
+      padding-bottom 50%
+      top 25%
+      width 50%
+
+    &::after
+      animation-name loader-r
+      background-color $Verde[0]
+      right 25%
+
+    &::before
+      animation-name loader-l
+      background-color $Rojo[0]
+      left 25%
+
+  span
+    display block
+    position absolute
+    left 33%
+    bottom 10%
+    width 33%
+    font-size 1.8rem
 
 .lock
   background-color #fff
@@ -268,6 +337,16 @@
     display block
     margin 4rem auto 0
 
+
+
+.one
+  &-cereza
+    a
+      color $Verde[1]
+
+  &-limon
+    a
+      color $Rojo[1]
 
 .resumen
 
