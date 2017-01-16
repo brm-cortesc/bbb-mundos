@@ -55,7 +55,7 @@ counter = (time, el) ->
 
       ### Lo enviamos a la página de resultados ###
       setTimeout ->
-        window.location.href = '/resultados.html'
+        window.location.href = 'resultados.html'
         return
       , 2000
 
@@ -259,7 +259,7 @@ jQuery(document).ready ($) ->
 
         ### Lo direccionamos al mapa correspondiente ###
         setTimeout ->
-          window.location.href = '/limon.html'
+          window.location.href = 'limon.html'
           return
         ,2100
 
@@ -274,7 +274,7 @@ jQuery(document).ready ($) ->
 
         ### Lo direccionamos al mapa correspondiente ###
         setTimeout ->
-          window.location.href = '/cereza.html'
+          window.location.href = 'cereza.html'
           return
         ,2100
 
